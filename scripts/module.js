@@ -1,4 +1,4 @@
-Hooks.on("renderCameraViews", () => setTimeout(() => {
+function updateUserVideoFrames() {
     const users = game.webrtc.client.getConnectedUsers();
     const username_to_userid = {}
     const VIDEO = "Video";
@@ -42,4 +42,8 @@ Hooks.on("renderCameraViews", () => setTimeout(() => {
             ui.webrtc.getUserCameraView(u).style.display = "none";
         }
     }
-}, 100));
+}
+
+Hooks.on("renderCameraViews", () => {
+    setTimeout(updateUserVideoFrames, 1000));
+}
