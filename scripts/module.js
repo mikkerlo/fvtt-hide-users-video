@@ -45,5 +45,5 @@ function updateUserVideoFrames() {
 }
 
 Hooks.once("renderCameraViews", () => {
-    setTimeout(updateUserVideoFrames, 1000));
+    setInterval(updateUserVideoFrames, 1000));
 }
